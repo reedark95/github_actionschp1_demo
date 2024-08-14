@@ -23,4 +23,4 @@ jobs:
     needs: [job1, job2, job3]
     steps:
     - name: print a date after all are complete
-      run: date -j -f "%Y%m%d" 19780423 +"%d/%m/%Y"
+      run: date +%Y-%m-%d
