@@ -1,0 +1,26 @@
+name: challenge
+
+on: push
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: print a date
+      run: date "+%H:%M:%S"
+  job2:
+    runs-on: windows-latest
+    steps:
+    - name: print a date
+      run: Get-Date
+  job3:
+    runs-on: macos-latest
+    steps:
+    - name: print a date
+      run: date +%Y-%m-%d
+  job4:
+    runs-on: ubuntu-latest
+    needs: [job1, job2, job3, job4]
+    steps:
+    - name: print a date after all are complete
+      run: date -j -f "%Y%m%d" 19780423 +"%d/%m/%Y"
