@@ -20,7 +20,7 @@ jobs:
       run: date +%Y-%m-%d
   job4:
     runs-on: ubuntu-latest
-    needs: [job1, job2, job3, job4]
+    needs: [job1, job2, job3]
     steps:
     - name: print a date after all are complete
       run: date -j -f "%Y%m%d" 19780423 +"%d/%m/%Y"
